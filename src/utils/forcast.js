@@ -15,7 +15,7 @@ const forcast=(latitude,longitude,callback)=>{
          callback(undefined,
              'The weather of your region is ' + body.current.weather_descriptions[0] +'. Temperature is ' +
             body.current.temperature + ' degrees but it feels like ' +
-            body.current.feelslike + 'degrees.'
+            body.current.feelslike + ' degrees.'
          )
             
     }
