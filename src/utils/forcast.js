@@ -12,11 +12,20 @@ const forcast=(latitude,longitude,callback)=>{
     }
     else{
       //  if(!error&&response.statusCode==200)
-         callback(undefined,
-             'The weather of your region is ' + body.current.weather_descriptions[0] +'. Temperature is ' +
-            body.current.temperature + ' degrees but it feels like ' +
-            body.current.feelslike + ' degrees. The wind speeed currently is '+ body.current.wind_speed + ' kmph and the humidity is '+ body.current.humidity + '%. Thanks for searching :).' 
-         )
+         callback(undefined,{
+             about: body.current.weather_descriptions[0] ,
+             temperature: body.current.temperature ,
+             feelslike : body.current.feelslike ,
+             windspeed: body.current.wind_speed ,
+            humidity: body.current.humidity,
+            time: body.location.localtime,
+            uvindex: body.current.uv_index,
+            visibility: body.current.visibility,
+        }  )
+               // 'The weather of your region is ' + body.current.weather_descriptions[0] +'. Temperature is ' +
+                // body.current.temperature + ' degrees and it feels like ' +
+                // body.current.feelslike + 'degrees.'
+        
             
     }
     })

@@ -53,14 +53,26 @@ app.get('/weather',(req, res)=>{
         if(error){
             return res.send({error})
         }
-        forcast(latitude, longitude, (error,forcastdata)=>{
+        // forcast(latitude, longitude, (error,forcastdata)=>{
+        forcast(latitude, longitude, (error,{about,temperature,feelslike,windspeed,humidity,time ,uvindex ,visibility}={})=>{
             if(error){
                 return res.send({error})
             }
-
+            // res.send({
+            //     forcast : forcastdata,
+            //     location ,
+            //     address : req.query.address
+            // })
             res.send({
-                forcast : forcastdata,
+                about,
+                temperature,
+                feelslike,
+                windspeed,
+                humidity,
                 location ,
+                time,
+                uvindex,
+                visibility,
                 address : req.query.address
             })
 
@@ -103,3 +115,4 @@ app.get('*',(req,res)=>{
 app.listen(port, ()=>{
     console.log('server is up on port '+ port)
 })
+

@@ -1,4 +1,11 @@
-body {
+body{
+    background-color: purple;
+}
+.pic{
+    height: 30px;
+    width:30px;
+}
+/* body {
     color : #333333;
     font-family: arial;
     max-width:650px;
@@ -14,6 +21,8 @@ body {
 .main-content{
     flex-grow : 1;
 }
+
+
 
 footer {
     color: #888888;
@@ -55,4 +64,4 @@ button {
     background :  #888888;
     color : white;
     padding: 8px;
-}
+} */
